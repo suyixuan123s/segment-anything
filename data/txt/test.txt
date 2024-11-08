@@ -1,0 +1,9 @@
+E:/ABB/AI/yolov9/data/images/00011.jpg
+E:/ABB/AI/yolov9/data/images/00031.jpg
+E:/ABB/AI/yolov9/data/images/00034.jpg
+E:/ABB/AI/yolov9/data/images/00041.jpg
+E:/ABB/AI/yolov9/data/images/00042.jpg
+E:/ABB/AI/yolov9/data/images/00047.jpg
+E:/ABB/AI/yolov9/data/images/00048.jpg
+E:/ABB/AI/yolov9/data/images/00072.jpg
+E:/ABB/AI/yolov9/data/images/00079.jpg
