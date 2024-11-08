@@ -1,0 +1,14 @@
+blood_tube
+ 5ML_centrifuge_tube
+ 10ML_centrifuge_tube
+ 5ML_sorting_tube_rack
+ 10ML_sorting_tube_rack
+ centrifuge_open
+ centrifuge_close
+ refrigerator_open
+ refrigerator_close
+ operating_desktop
+ tobe_sorted_tube_rack
+dispensing_tube_rack
+ sorting_tube_rack_base
+ tube_rack_storage_cabinet
