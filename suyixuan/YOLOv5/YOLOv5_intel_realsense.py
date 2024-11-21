@@ -1,3 +1,10 @@
+"""
+Author: Yixuan Su
+Date: 2024/11/21 12:08
+File: YOLOv5_intel_realsense.py
+Description:
+"""
+
 import time
 import cv2
 import torch
@@ -40,12 +47,14 @@ def get_aligned_images():
 获取随机点三维坐标
 '''
 
+
 def get_3d_camera_coordinate(depth_pixel, aligned_depth_frame, depth_intrin):
     x = depth_pixel[0]
     y = depth_pixel[1]
     dis = aligned_depth_frame.get_distance(x, y)  # 获取该像素点对应的深度
     camera_coordinate = rs.rs2_deproject_pixel_to_point(depth_intrin, depth_pixel, dis)
     return dis, camera_coordinate
+
 
 if __name__ == '__main__':  # 入口
 

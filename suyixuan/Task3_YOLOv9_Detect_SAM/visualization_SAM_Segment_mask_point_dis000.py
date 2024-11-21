@@ -1,10 +1,15 @@
+"""
+Author: Yixuan Su
+Date: 2024/11/21 12:08
+File: visualization_SAM_Segment_mask_point_dis000.py
+Description:
+"""
+
 import cv2
 import numpy as np
 import open3d as o3d
 import os
 import csv
-
-
 
 # ----------------- 文件路径 -----------------
 image_path = r'E:\ABB\AI\yolov9\data\data_realsense\color_image_20241016-215422.jpg'

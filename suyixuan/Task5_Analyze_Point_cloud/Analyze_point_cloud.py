@@ -1,3 +1,10 @@
+"""
+Author: Yixuan Su
+Date: 2024/11/21 12:08
+File: Analyze_point_cloud.py
+Description:
+"""
+
 import open3d as o3d
 import numpy as np
 
@@ -26,7 +33,6 @@ num_points = points.shape[0]
 # 计算中心点（所有点的平均坐标）
 center_point = points.mean(axis=0)
 
-
 # # 将中心点添加到点云中并设为红色
 # highlighted_points = np.vstack([points, center_point])
 # highlighted_colors = np.vstack([colors, [1, 0, 0]])  # 红色高亮
@@ -42,7 +48,8 @@ center_sphere.translate(center_point)  # 将球体移动到中心点位置
 center_sphere.paint_uniform_color([1, 0, 0])  # 将球体颜色设为红色
 
 # 将原始点和球体一起显示
-o3d.visualization.draw_geometries([point_cloud, center_sphere], window_name="Point Cloud with Center Highlight", width=800, height=600)
+o3d.visualization.draw_geometries([point_cloud, center_sphere], window_name="Point Cloud with Center Highlight",
+                                  width=800, height=600)
 
 # 输出结果
 print(f"点的数量: {num_points}")
@@ -50,8 +57,6 @@ print(f"中心点位置: {center_point}")
 
 # # 显示带有高亮中心点的点云
 # o3d.visualization.draw_geometries([highlighted_point_cloud], window_name="Point Cloud with Center Highlight", width=800, height=600)
-
-
 
 
 # 返回点的数量、中心点和颜色信息（如果存在）

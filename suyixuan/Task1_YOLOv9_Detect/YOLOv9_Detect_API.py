@@ -1,3 +1,10 @@
+"""
+Author: Yixuan Su
+Date: 2024/11/21 12:08
+File: YOLOv9_Detect_API.py
+Description:
+"""
+
 import argparse
 import os
 import platform

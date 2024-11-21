@@ -1,3 +1,10 @@
+"""
+Author: Yixuan Su
+Date: 2024/11/21 12:08
+File: Analyze_point_cloud1.py
+Description:
+"""
+
 import open3d as o3d
 import numpy as np
 
@@ -27,6 +34,7 @@ center_point = points.mean(axis=0)
 alpha, beta, gamma = -148.0, -0.4, -178.0
 tx, ty, tz = 0.525, 0.76, 1.25
 
+
 def get_transformation_matrix(alpha, beta, gamma, tx, ty, tz):
     alpha, beta, gamma = np.radians([alpha, beta, gamma])
     Rx = np.array([[1, 0, 0], [0, np.cos(alpha), -np.sin(alpha)], [0, np.sin(alpha), np.cos(alpha)]])
@@ -37,6 +45,7 @@ def get_transformation_matrix(alpha, beta, gamma, tx, ty, tz):
     transformation_matrix[:3, :3] = rotation_matrix
     transformation_matrix[:3, 3] = [tx, ty, tz]
     return transformation_matrix
+
 
 # 获取转换矩阵
 transformation_matrix = get_transformation_matrix(alpha, beta, gamma, tx, ty, tz)
@@ -56,7 +65,8 @@ center_sphere.translate(center_point)  # 将球体移动到中心点位置
 center_sphere.paint_uniform_color([1, 0, 0])  # 将球体颜色设为红色
 
 # 将原始点和球体一起显示
-o3d.visualization.draw_geometries([point_cloud, center_sphere], window_name="Point Cloud with Center Highlight", width=800, height=600)
+o3d.visualization.draw_geometries([point_cloud, center_sphere], window_name="Point Cloud with Center Highlight",
+                                  width=800, height=600)
 
 # 输出结果
 print(f"点的数量: {num_points}")

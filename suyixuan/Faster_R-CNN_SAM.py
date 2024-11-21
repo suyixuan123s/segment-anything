@@ -1,3 +1,10 @@
+"""
+Author: Yixuan Su
+Date: 2024/11/21 12:08
+File: Faster_R-CNN_SAM.py
+Description:
+"""
+
 import cv2
 import torch
 import numpy as np
@@ -53,6 +60,7 @@ for i, mask in enumerate(masks):
         score = detections['scores'][max_idx.item()].item()
         print(f"Object {i}: Type {label}, Position {bbox}, Score {score}")
 
+
 # 定义 show_anns 函数
 def show_anns(anns):
     if len(anns) == 0:
@@ -68,6 +76,7 @@ def show_anns(anns):
         color_mask = np.concatenate([np.random.random(3), [0.35]])
         img[m] = color_mask
     ax.imshow(img)
+
 
 # 显示图像和分割结果
 plt.figure(figsize=(20, 20))

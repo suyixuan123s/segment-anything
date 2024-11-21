@@ -1,3 +1,10 @@
+"""
+Author: Yixuan Su
+Date: 2024/11/21 12:08
+File: realsense_yolov9_simulation_detection.py
+Description:
+"""
+
 import os
 import cv2
 import numpy as np
@@ -23,7 +30,6 @@ color_intrinsics = profile.get_stream(rs.stream.color).as_video_stream_profile()
 alpha, beta, gamma = -148.0, -0.4, -178.0
 tx, ty, tz = 0.525, 0.76, 1.25
 
-
 # 类别名称映射（替换为你的 YOLO 模型的实际类别名称）
 class_names = {
     0: 'blood_tube',
@@ -41,6 +47,7 @@ class_names = {
     12: 'sorting_tube_rack_base',
     13: 'tube_rack_storage_cabinet'
 }
+
 
 def get_transformation_matrix(alpha, beta, gamma, tx, ty, tz):
     alpha, beta, gamma = np.radians([alpha, beta, gamma])

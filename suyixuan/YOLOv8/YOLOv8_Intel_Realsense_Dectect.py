@@ -1,5 +1,11 @@
-# 此程序用于实现视频分帧识别物体,并为所识别的物品添加矩形框，显示置信度、标签等，更新于2024/6/24
+"""
+Author: Yixuan Su
+Date: 2024/11/21 12:08
+File: YOLOv8_Intel_Realsense_Dectect.py
+Description: # 此程序用于实现视频分帧识别物体,并为所识别的物品添加矩形框，显示置信度、标签等，更新于2024/6/24
 # 更新程序，用于显示实时三维坐标2024/6/24
+"""
+
 import cv2
 import numpy as np
 import pyrealsense2 as rs

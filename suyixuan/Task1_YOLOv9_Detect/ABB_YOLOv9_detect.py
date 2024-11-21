@@ -1,3 +1,10 @@
+"""
+Author: Yixuan Su
+Date: 2024/11/21 12:08
+File: ABB_YOLOv9_detect.py
+Description:
+"""
+
 import argparse
 import os
 import platform
@@ -220,7 +227,8 @@ def parse_opt():
     parser.add_argument('--weights', nargs='+', type=str,
                         default=ROOT / r'E:\ABB\segment-anything\runs\train\exp19\weights\best.pt',
                         help='model path or triton URL')
-    parser.add_argument('--source', type=str, default=ROOT / r'E:\ABB\AI\Depth-Anything-V2\suyixuan\Intel_Realsense_D435_Datasets\color_image_20241026-194402.jpg',
+    parser.add_argument('--source', type=str,
+                        default=ROOT / r'E:\ABB\AI\Depth-Anything-V2\suyixuan\Intel_Realsense_D435_Datasets\color_image_20241026-194402.jpg',
                         help='file/dir/URL/glob/screen/0(webcam)')
     parser.add_argument('--data', type=str, default=ROOT / 'data/coco-dataset.yaml',
                         help='(optional) dataset.yaml path')

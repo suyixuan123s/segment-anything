@@ -1,3 +1,10 @@
+"""
+Author: Yixuan Su
+Date: 2024/11/21 12:08
+File: Capture_Point_cloud_Single_object.py
+Description:
+"""
+
 import cv2
 import numpy as np
 import open3d as o3d
@@ -6,8 +13,6 @@ import open3d as o3d
 image_path = r'E:\ABB\AI\yolov9\data\data_realsense\color_image_20241016-215422.jpg'
 depth_path = r'E:\ABB\AI\yolov9\data\data_realsense\depth_image_20241016-215422.png'
 mask_path = r'E:\ABB\AI\yolov9\segment\output\blood_tube_object_0.93.png'  # 掩码图像
-
-
 
 # ----------------- 相机内参 -----------------
 fx, fy = 606.626525878906, 606.6566772460938  # 焦距
@@ -21,6 +26,7 @@ mask_image = cv2.imread(mask_path, cv2.IMREAD_UNCHANGED)  # 读取掩码图像
 # 确保掩码图像是二值化图像 (只有黑白，非 RGB)
 mask_image_gray = cv2.cvtColor(mask_image, cv2.COLOR_BGR2GRAY)
 _, binary_mask = cv2.threshold(mask_image_gray, 1, 255, cv2.THRESH_BINARY)  # 阈值化处理
+
 
 # ----------------- 提取掩码区域的三维点云 -----------------
 def extract_point_cloud(mask, depth_image, fx, fy, cx, cy):
@@ -37,6 +43,7 @@ def extract_point_cloud(mask, depth_image, fx, fy, cx, cy):
                 y = (v - cy) * z / fy
                 points.append([x, y, z])
     return np.array(points)
+
 
 # 提取掩码区域的三维点云
 points = extract_point_cloud(binary_mask, depth_image, fx, fy, cx, cy)

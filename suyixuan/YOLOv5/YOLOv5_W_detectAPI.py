@@ -1,10 +1,16 @@
+"""
+Author: Yixuan Su
+Date: 2024/11/21 12:08
+File: YOLOv5_W_detectAPI.py
+Description:
+"""
+
 import argparse
 import os
 import platform
 import random
 import sys
 from pathlib import Path
-
 
 import torch
 from torch.backends import cudnn
@@ -20,7 +26,6 @@ from utils.general import (LOGGER, Profile, check_file, check_img_size, check_im
                            increment_path, non_max_suppression, print_args, scale_boxes, strip_optimizer, xyxy2xywh)
 from utils.plots import Annotator, colors, save_one_box
 from utils.torch_utils import select_device, smart_inference_mode, time_sync
-
 
 """
 使用面向对象编程中的类来封装，需要去除掉原始 detect.py 中的结果保存方法，重写
@@ -61,7 +66,7 @@ class DetectAPI:
         # 初始化参数，加载模型
         self.opt = YoloOpt(weights=weights, imgsz=imgsz)
         weights = self.opt.weights  # 传入的权重
-        imgsz = self.opt.imgsz      # 传入的图像尺寸
+        imgsz = self.opt.imgsz  # 传入的图像尺寸
 
         # Initialize 初始化
         # 获取设备 CPU/CUDA
@@ -78,7 +83,7 @@ class DetectAPI:
 
         # 不使用半精度
         if self.half:
-            self.model.half() # switch to FP16
+            self.model.half()  # switch to FP16
 
         # read names and colors
         # names是类别名称字典；colors是画框时用到的颜色
@@ -95,7 +100,7 @@ class DetectAPI:
         # 直接从 source 加载数据
         dataset = MyLoadImages(source)
         # 源程序通过路径加载数据，现在 source 就是加载好的数据，因此 LoadImages 就要重写
-        bs = 1 # set batch size
+        bs = 1  # set batch size
 
         # 保存的路径
         vid_path, vid_writer = [None] * bs, [None] * bs
@@ -121,7 +126,8 @@ class DetectAPI:
                 # NMS
                 with dt[2]:
                     # max_det=2 最多检测两个目标，如果图片中有3个目标，需要修改
-                    pred = non_max_suppression(pred, self.opt.conf_thres, self.opt.iou_thres, self.opt.classes, self.opt.agnostic_nms, max_det=2)
+                    pred = non_max_suppression(pred, self.opt.conf_thres, self.opt.iou_thres, self.opt.classes,
+                                               self.opt.agnostic_nms, max_det=2)
 
                 # Process predictions
                 # 处理每一张图片
@@ -157,5 +163,3 @@ class DetectAPI:
                         x0, y0 = annotator.box_label(xyxy, label, color=self.colors[int(cls)])
 
             return im0, class_id_list, xyxy_list, conf_list
-
-

@@ -1,3 +1,10 @@
+"""
+Author: Yixuan Su
+Date: 2024/11/21 12:08
+File: Task1_SAM_all_object_saved.py
+Description:
+"""
+
 import os
 import cv2
 import numpy as np
