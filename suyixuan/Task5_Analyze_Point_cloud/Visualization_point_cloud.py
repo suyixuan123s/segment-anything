@@ -24,7 +24,7 @@ def view_point_cloud(file_path):
 # 用法示例
 if __name__ == "__main__":
     # 指定点云文件路径
-    file_path = r'E:\ABB\segment-anything\data\point_cloud_data\segmentation_point_cloud.ply'
+    file_path = r'point_cloud.ply'
 
     # 查看点云
     view_point_cloud(file_path)

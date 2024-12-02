@@ -9,7 +9,7 @@ import open3d as o3d
 import numpy as np
 
 # 点云文件路径
-point_cloud_path = r'/realsense_yolov9_simulation_detection/SAM277/centrifuge_close/centrifuge_close_0/point_cloud.ply'
+point_cloud_path = r'E:\ABB\segment-anything\suyixuan\Task6_YOLOv9_Image_Prompt_SAM_Point_Cloud_Transformation_matrix\SAM\5ML_sorting_tube_rack\5ML_sorting_tube_rack_6\point_cloud.ply'
 
 # 加载点云文件（保留颜色信息）
 point_cloud = o3d.io.read_point_cloud(point_cloud_path)
