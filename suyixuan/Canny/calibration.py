@@ -3,7 +3,7 @@ import numpy as np
 from pyapriltags import Detector
 from scipy.spatial.transform import Rotation
 
-img_path = '00006.jpg'
+img_path = '00064.jpg'
 tag_id = 2
 tag_size = 0.0755
 

@@ -40,7 +40,7 @@
 import numpy as np
 import cv2
 
-img = cv2.imread("E:/ABB/AI/yolov9/data/Realsence_Data/00001.jpg")
+img = cv2.imread("00064.jpg")
 # img2 = cv2.imread("E:/ABB/AI/yolov9/data/Realsence_Data/00002.jpg")
 # cv2.imshow('demo2', img)
 # cv2.imshow('demo1', img2)

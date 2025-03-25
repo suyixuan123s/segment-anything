@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 # 读取图像
-image_path = "111.png"
+image_path = "00064.jpg"
 image = cv2.imread(image_path)
 
 # 将图像转换为灰度图像
